@@ -14,7 +14,7 @@ class Item1 extends StatelessWidget{
         height: 200,
         decoration: BoxDecoration(
           image: const DecorationImage(
-            image: AssetImage("assets/images/PosterTheRevenant.jpg"),
+            image: AssetImage("assets/images/posterTheRevenant.jpg"),
             fit: BoxFit.cover,
           ),
           borderRadius: BorderRadius.circular(20),
@@ -49,8 +49,8 @@ class Item2 extends StatelessWidget{
         height: 200,
         decoration: BoxDecoration(
           image: const DecorationImage(
-            image: AssetImage("assets/images/PosterTheRevenant.jpg"),
-            fit: BoxFit.cover,
+            image: AssetImage("assets/images/posterTheLittlePrince.jpg"),
+            fit: BoxFit.fill,
           ),
           borderRadius: BorderRadius.circular(20),
           // gradient: const LinearGradient(

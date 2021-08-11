@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:moovi/secondPage.dart';
-import 'package:moovi/showToast.dart';
 import 'constant.dart';
 
 class FirstContainer extends StatelessWidget{
@@ -12,14 +11,13 @@ class FirstContainer extends StatelessWidget{
     return InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
-        showToast(context);
       },
       child: SizedBox(
         height: 670,
         child: Stack(
           children: <Widget>[
             Image.asset(
-              'assets/images/PosterTheRevenant.jpg',
+              'assets/images/posterTheRevenant.jpg',
             ),
             Stack(
               children: [
@@ -67,7 +65,10 @@ class FirstContainer extends StatelessWidget{
                   Padding(
                     padding: const EdgeInsets.only(top: 15),
                     child: ElevatedButton(
-                      onPressed: () {showToast(context);},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (
+                            context) => SecondPage()));
+                      },
                       style: ButtonStyle(
                         minimumSize: MaterialStateProperty.all(const Size(150, 30)),
                         backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(
