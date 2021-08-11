@@ -40,7 +40,15 @@ class SecondPage extends StatelessWidget{
                       style: ButtonStyle(
                           overlayColor: MaterialStateProperty.all(Colors.transparent)
                       ),
-                      child: Text('back', style: ThemeText.mainText,),
+                      child: Row(
+                        children: [
+                          Icon(Icons.arrow_back_ios_rounded, color: Colors.white,),
+                          Padding(
+                              padding: EdgeInsets.only(top: 5),
+                            child: Text('back', style: ThemeText.mainText,),
+                          ),
+                        ],
+                      )
                     ),
                   ],
                 ),
