@@ -12,10 +12,8 @@ class SecondPage extends StatelessWidget{
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(left: 20, bottom: 75),
+            padding: EdgeInsets.only(left: 20, bottom: 55),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget> [
                 Stack(
                   children: <Widget> [
@@ -48,55 +46,70 @@ class SecondPage extends StatelessWidget{
                             child: Text('back', style: ThemeText.mainText,),
                           ),
                         ],
-                      )
+                      ),
                     ),
                   ],
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor "
-                      "in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-                  style: ThemeText.mainText,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Wrap(
-                      spacing: 72,
-                      children: <Widget> [
-                        Text('RATING ', style: ThemeText.mainText,),
-                        Text('7.5 / 10', style: ThemeText.mainText,),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Wrap(
-                      spacing: 50,
-                      children: <Widget> [
-                        Text('DIRECTOR ', style: ThemeText.mainText,),
-                        Text('7.5 / 10', style: ThemeText.mainText,),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Wrap(
-                      spacing: 90,
-                      children: <Widget> [
-                        Text('CAST ', style: ThemeText.mainText,),
-                        Text('7.5 / 10', style: ThemeText.mainText,),
-                      ],
-                    ),
+                  child: Column(
+                    children: <Widget> [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text('The Little Prince', style: ThemeText.orangeBigText,),
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text('2021 . Drama, Sci-Fi, Dark', style: ThemeText.mainText,),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 15, bottom: 15),
+                        child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor "
+                            "in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                          style: ThemeText.mainText,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Wrap(
+                            spacing: 72,
+                            children: <Widget> [
+                              Text('RATING ', style: ThemeText.mainText,),
+                              Text('7.5 / 10', style: ThemeText.orangeSmallText,),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Wrap(
+                            spacing: 50,
+                            children: <Widget> [
+                              Text('DIRECTOR ', style: ThemeText.mainText,),
+                              Text('7.5 / 10', style: ThemeText.orangeSmallText,),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Wrap(
+                            spacing: 90,
+                            children: <Widget> [
+                              Text('CAST ', style: ThemeText.mainText,),
+                              Text('7.5 / 10', style: ThemeText.orangeSmallText,),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -106,10 +119,9 @@ class SecondPage extends StatelessWidget{
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {showToast(context);},
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromRGBO(255, 240, 0, 100),
         elevation: 2,
         label: Text('BUY TICKETS', style: TextStyle(fontSize: 15),),
-
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
