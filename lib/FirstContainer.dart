@@ -13,7 +13,7 @@ class FirstContainer extends StatelessWidget{
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: 0,)));
       },
       child: SizedBox(
         height: 670,
@@ -70,7 +70,7 @@ class FirstContainer extends StatelessWidget{
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (
-                            context) => SecondPage()));
+                            context) => SecondPage(index: 0,)));
                       },
                       style: ButtonStyle(
                         minimumSize: MaterialStateProperty.all(const Size(150, 30)),

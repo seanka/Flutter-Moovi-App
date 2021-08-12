@@ -1,7 +1,4 @@
 // ignore_for_file: file_names
-
-import 'package:flutter/cupertino.dart';
-
 class MovieData {
   String cover;
   String title;
@@ -27,7 +24,7 @@ var movieDataList = [
       cover: 'assets/images/posterTheRevenant.jpg',
       title: 'The Revenant',
       genre: '2021 . Dark',
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description: "Lorem ipsum dolor sit amet, co7nsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor "
           "in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       rating: '8.5/ 10',

@@ -6,11 +6,12 @@ import 'showToast.dart';
 import 'movieData.dart';
 
 class SecondPage extends StatelessWidget{
+  final movieDataMap = movieDataList.asMap();
+  final int index;
+  SecondPage({Key? key, required this.index}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-
-    final movieDataMap = movieDataList.asMap();
-
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
@@ -31,7 +32,7 @@ class SecondPage extends StatelessWidget{
                                 bottomLeft: Radius.circular(25),
                               ),
                               image: DecorationImage(
-                                image: AssetImage(movieDataMap[0]!.cover),
+                                image: AssetImage(movieDataMap[index]!.cover),
                                 fit: BoxFit.cover,
                               )
                           ),
@@ -60,15 +61,15 @@ class SecondPage extends StatelessWidget{
                     children: <Widget> [
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(movieDataMap[0]!.title, style: ThemeText.orangeBigText,),
+                        child: Text(movieDataMap[index]!.title, style: ThemeText.orangeBigText,),
                       ),
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(movieDataMap[0]!.genre, style: ThemeText.mainText,),
+                        child: Text(movieDataMap[index]!.genre, style: ThemeText.mainText,),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 15, bottom: 15),
-                        child: Text(movieDataMap[0]!.description,
+                        child: Text(movieDataMap[index]!.description,
                           style: ThemeText.mainText,
                         ),
                       ),
@@ -80,7 +81,7 @@ class SecondPage extends StatelessWidget{
                             spacing: 72,
                             children: <Widget> [
                               Text('RATING ', style: ThemeText.mainText,),
-                              Text(movieDataMap[0]!.rating, style: ThemeText.orangeSmallText,),
+                              Text(movieDataMap[index]!.rating, style: ThemeText.orangeSmallText,),
                             ],
                           ),
                         ),
@@ -93,7 +94,7 @@ class SecondPage extends StatelessWidget{
                             spacing: 50,
                             children: <Widget> [
                               Text('DIRECTOR ', style: ThemeText.mainText,),
-                              Text(movieDataMap[0]!.director, style: ThemeText.orangeSmallText,),
+                              Text(movieDataMap[index]!.director, style: ThemeText.orangeSmallText,),
                             ],
                           ),
                         ),
@@ -106,7 +107,7 @@ class SecondPage extends StatelessWidget{
                             spacing: 90,
                             children: <Widget> [
                               Text('CAST ', style: ThemeText.mainText,),
-                              Text(movieDataMap[0]!.cast, style: ThemeText.orangeSmallText,),
+                              Text(movieDataMap[index]!.cast, style: ThemeText.orangeSmallText,),
                             ],
                           ),
                         ),
