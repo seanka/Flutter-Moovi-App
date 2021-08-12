@@ -43,7 +43,7 @@ class _ImageSliderState extends State<ImageSlider> {
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enlargeCenterPage: true,
                 viewportFraction: 0.65,
-                aspectRatio: 1.2,
+                aspectRatio: 1.1,
                 onPageChanged: (index, reason) {
                   setState(() {
                     _currentIndex = index;

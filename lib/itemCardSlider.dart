@@ -6,6 +6,38 @@ import 'movieData.dart';
 import 'secondPage.dart';
 final movieDataMap = movieDataList.asMap();
 
+// Option 1 : Text without overlay
+// class Item extends StatelessWidget{
+//   final int index;
+//   const Item({Key? key, required this.index}) : super(key: key);
+//   @override
+//   Widget build(BuildContext context) {
+//     return InkWell(
+//       onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: index,)));},
+//       child: Container(
+//         height: 200,
+//         decoration: BoxDecoration(
+//           image: DecorationImage(
+//             image: AssetImage(movieDataMap[index]!.cover),
+//             fit: BoxFit.cover,
+//           ),
+//           borderRadius: BorderRadius.circular(20),
+//           boxShadow: [
+//             BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 2),
+//           ],
+//         ),
+//         child: Center(
+//           child: Align(
+//             alignment: const Alignment(-0.75, 0.95),
+//             child: Text(movieDataMap[index]!.title, style: ThemeText.mainText,),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// Option 2 : Text with gradient overlay
 class Item extends StatelessWidget{
   final int index;
   const Item({Key? key, required this.index}) : super(key: key);
@@ -13,24 +45,43 @@ class Item extends StatelessWidget{
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: index,)));},
-      child: Container(
-        height: 200,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(movieDataMap[index]!.cover),
-            fit: BoxFit.cover,
+      child: Stack(
+        children: <Widget> [
+          Container(
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(movieDataMap[index]!.cover),
+                fit: BoxFit.cover,
+              ),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 2),
+              ],
+            ),
           ),
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 2),
-          ],
-        ),
-        child: Center(
-          child: Align(
-            alignment: const Alignment(-0.8, 0.9),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 70,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  stops: [0, 1],
+                  colors: [Color.fromRGBO(0, 0, 0, 1.0), Color.fromRGBO(
+                      0, 0, 0, 0.0)]
+                )
+              ),
+            ),
+          ),
+          Align(
+            alignment: const Alignment(-0.75, 0.95),
             child: Text(movieDataMap[index]!.title, style: ThemeText.mainText,),
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
