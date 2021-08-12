@@ -3,35 +3,32 @@
 import 'package:flutter/material.dart';
 import 'constant.dart';
 import 'showToast.dart';
+import 'movieData.dart';
+import 'secondPage.dart';
+final movieDataMap = movieDataList.asMap();
 
 class Item1 extends StatelessWidget{
   const Item1({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {showToast(context);},
+      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: 0)));},
       child: Container(
         height: 200,
         decoration: BoxDecoration(
-          image: const DecorationImage(
-            image: AssetImage("assets/images/posterTheRevenant.jpg"),
+          image: DecorationImage(
+            image: AssetImage(movieDataMap[0]!.cover),
             fit: BoxFit.cover,
           ),
           borderRadius: BorderRadius.circular(20),
-          // gradient: const LinearGradient(
-          //   begin: Alignment.bottomCenter,
-          //   end: Alignment.topCenter,
-          //   stops: [0, 0.2],
-          //   colors: [Color.fromRGBO(0, 0, 0, 0), Color.fromRGBO(255, 255, 255, 1)]
-          // ),
           boxShadow: [
             BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 2),
           ],
         ),
-        child: const Center(
+        child: Center(
           child: Align(
-            alignment: Alignment(-0.8, 0.9),
-            child: Text("Movie1", style: ThemeText.mainText,),
+            alignment: const Alignment(-0.8, 0.9),
+            child: Text(movieDataMap[0]!.title, style: ThemeText.mainText,),
           ),
         ),
       ),
@@ -44,29 +41,23 @@ class Item2 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {showToast(context);},
+      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: 1)));},
       child: Container(
         height: 200,
         decoration: BoxDecoration(
-          image: const DecorationImage(
-            image: AssetImage("assets/images/posterTheLittlePrince.jpg"),
+          image: DecorationImage(
+            image: AssetImage(movieDataMap[1]!.cover),
             fit: BoxFit.fill,
           ),
           borderRadius: BorderRadius.circular(20),
-          // gradient: const LinearGradient(
-          //   begin: Alignment.bottomCenter,
-          //   end: Alignment.topCenter,
-          //   stops: [0, 0.2],
-          //   colors: [Color.fromRGBO(0, 0, 0, 0), Color.fromRGBO(255, 255, 255, 1)]
-          // ),
           boxShadow: [
             BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 2),
           ],
         ),
-        child: const Center(
+        child: Center(
           child: Align(
-            alignment: Alignment(-0.8, 0.9),
-            child: Text("Movie2", style: ThemeText.mainText,),
+            alignment: const Alignment(-0.8, 0.9),
+            child: Text(movieDataMap[1]!.title, style: ThemeText.mainText,),
           ),
         ),
       ),
