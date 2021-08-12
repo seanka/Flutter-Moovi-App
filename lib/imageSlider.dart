@@ -15,8 +15,9 @@ class ImageSlider extends StatefulWidget{
 class _ImageSliderState extends State<ImageSlider> {
   int _currentIndex = 0;
   List cardList = [
-    const Item1(),
-    const Item2(),
+    const Item(index: 0),
+    const Item(index: 1),
+    const Item(index: 0),
   ];
 
   List<T> map<T>(List list, Function handler) {
