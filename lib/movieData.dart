@@ -42,5 +42,17 @@ var movieDataList = [
       rating: '5.0/ 10',
       director: 'Director The Little Prince',
       cast: 'Cast 1 TLR, Cast 2 TLR',
-  )
+  ),
+
+  MovieData(
+      cover: 'assets/images/posterSunshine.jpg',
+      title: 'Sunshine',
+      genre: '2020 . Drama. Thriller',
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor "
+          "in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      rating: '9.0/ 10',
+      director: 'Director Sunshine',
+      cast: 'Cast 1 Sunshine, Cast 2 Sunshine',
+  ),
 ];

@@ -61,6 +61,7 @@ flutter:
   assets:
     - assets/images/posterTheRevenant.jpg
     - assets/images/posterTheLittlePrince.jpg
+    - assets/images/posterSunshine.jpg
     - assets/images/teslaPOV.png
     - assets/images/aquaman.jpg
     - assets/images/teslaPOV2.png

@@ -17,7 +17,7 @@ class _ImageSliderState extends State<ImageSlider> {
   List cardList = [
     const Item(index: 0),
     const Item(index: 1),
-    const Item(index: 0),
+    const Item(index: 2),
   ];
 
   List<T> map<T>(List list, Function handler) {
