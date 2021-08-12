@@ -6,38 +6,6 @@ import 'movieData.dart';
 import 'secondPage.dart';
 final movieDataMap = movieDataList.asMap();
 
-// Option 1 : Text without overlay
-// class Item extends StatelessWidget{
-//   final int index;
-//   const Item({Key? key, required this.index}) : super(key: key);
-//   @override
-//   Widget build(BuildContext context) {
-//     return InkWell(
-//       onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: index,)));},
-//       child: Container(
-//         height: 200,
-//         decoration: BoxDecoration(
-//           image: DecorationImage(
-//             image: AssetImage(movieDataMap[index]!.cover),
-//             fit: BoxFit.cover,
-//           ),
-//           borderRadius: BorderRadius.circular(20),
-//           boxShadow: [
-//             BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 2),
-//           ],
-//         ),
-//         child: Center(
-//           child: Align(
-//             alignment: const Alignment(-0.75, 0.95),
-//             child: Text(movieDataMap[index]!.title, style: ThemeText.mainText,),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// Option 2 : Text with gradient overlay
 class Item extends StatelessWidget{
   final int index;
   const Item({Key? key, required this.index}) : super(key: key);

@@ -4,24 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:moovi/secondPage.dart';
 import 'constant.dart';
 import 'movieData.dart';
+final movieDataMap = movieDataList.asMap();
 
 class FirstContainer extends StatelessWidget{
-  final movieDataMap = movieDataList.asMap();
-  FirstContainer({Key? key}) : super(key: key);
+  final int index;
+
+  const FirstContainer({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: 0,)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: index,)));
       },
       child: SizedBox(
         height: 670,
         child: Stack(
           children: <Widget>[
-            Image.asset(
-              movieDataMap[0]!.cover,
-            ),
+            Image.asset(movieDataMap[index]!.cover),
             Stack(
               children: [
                 Positioned.fill(
@@ -63,8 +63,8 @@ class FirstContainer extends StatelessWidget{
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget> [
-                  Text(movieDataMap[0]!.title, style: ThemeText.subText,),
-                  Text(movieDataMap[0]!.genre, style: ThemeText.mainText,),
+                  Text(movieDataMap[index]!.title, style: ThemeText.subText,),
+                  Text(movieDataMap[index]!.genre, style: ThemeText.mainText,),
                   Padding(
                     padding: const EdgeInsets.only(top: 15),
                     child: ElevatedButton(
