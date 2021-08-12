@@ -3,9 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:moovi/secondPage.dart';
 import 'constant.dart';
+import 'movieData.dart';
 
 class FirstContainer extends StatelessWidget{
-  const FirstContainer({Key? key}) : super(key: key);
+  final movieDataMap = movieDataList.asMap();
+  FirstContainer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -17,7 +20,7 @@ class FirstContainer extends StatelessWidget{
         child: Stack(
           children: <Widget>[
             Image.asset(
-              'assets/images/posterTheRevenant.jpg',
+              movieDataMap[0]!.cover,
             ),
             Stack(
               children: [
@@ -60,8 +63,8 @@ class FirstContainer extends StatelessWidget{
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget> [
-                  const Text('The Revenant', style: ThemeText.subText,),
-                  const Text('2021 . Drama, Sci-Fi, Dark', style: ThemeText.mainText,),
+                  Text(movieDataMap[0]!.title, style: ThemeText.subText,),
+                  Text(movieDataMap[0]!.genre, style: ThemeText.mainText,),
                   Padding(
                     padding: const EdgeInsets.only(top: 15),
                     child: ElevatedButton(

@@ -3,10 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:moovi/constant.dart';
 import 'showToast.dart';
+import 'movieData.dart';
 
 class SecondPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+
+    final movieDataMap = movieDataList.asMap();
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
@@ -27,7 +31,7 @@ class SecondPage extends StatelessWidget{
                                 bottomLeft: Radius.circular(25),
                               ),
                               image: DecorationImage(
-                                image: AssetImage('assets/images/posterTheLittlePrince.jpg'),
+                                image: AssetImage(movieDataMap[0]!.cover),
                                 fit: BoxFit.cover,
                               )
                           ),
@@ -56,17 +60,15 @@ class SecondPage extends StatelessWidget{
                     children: <Widget> [
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Text('The Little Prince', style: ThemeText.orangeBigText,),
+                        child: Text(movieDataMap[0]!.title, style: ThemeText.orangeBigText,),
                       ),
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Text('2021 . Drama, Sci-Fi, Dark', style: ThemeText.mainText,),
+                        child: Text(movieDataMap[0]!.genre, style: ThemeText.mainText,),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 15, bottom: 15),
-                        child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor "
-                            "in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                        child: Text(movieDataMap[0]!.description,
                           style: ThemeText.mainText,
                         ),
                       ),
@@ -78,7 +80,7 @@ class SecondPage extends StatelessWidget{
                             spacing: 72,
                             children: <Widget> [
                               Text('RATING ', style: ThemeText.mainText,),
-                              Text('7.5 / 10', style: ThemeText.orangeSmallText,),
+                              Text(movieDataMap[0]!.rating, style: ThemeText.orangeSmallText,),
                             ],
                           ),
                         ),
@@ -91,7 +93,7 @@ class SecondPage extends StatelessWidget{
                             spacing: 50,
                             children: <Widget> [
                               Text('DIRECTOR ', style: ThemeText.mainText,),
-                              Text('7.5 / 10', style: ThemeText.orangeSmallText,),
+                              Text(movieDataMap[0]!.director, style: ThemeText.orangeSmallText,),
                             ],
                           ),
                         ),
@@ -104,7 +106,7 @@ class SecondPage extends StatelessWidget{
                             spacing: 90,
                             children: <Widget> [
                               Text('CAST ', style: ThemeText.mainText,),
-                              Text('7.5 / 10', style: ThemeText.orangeSmallText,),
+                              Text(movieDataMap[0]!.cast, style: ThemeText.orangeSmallText,),
                             ],
                           ),
                         ),
