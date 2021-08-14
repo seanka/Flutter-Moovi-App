@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: prefer_typing_uninitialized_variables
 
-abstract class ThemeText{
+import 'package:flutter/material.dart';
+var backgroundColor = Colors.white;
+
+class ThemeText{
   static const TextStyle mainText = TextStyle(
     fontFamily: 'Tajawal',
     color: Colors.white,
@@ -17,14 +20,35 @@ abstract class ThemeText{
 
   static const TextStyle orangeSmallText = TextStyle(
     fontFamily: 'Tajawal',
-    color: Color.fromRGBO(255, 240, 0, 100),
+    color: Color.fromRGBO(232, 176, 20, 50),
     fontSize: 20,
     fontWeight: FontWeight.w700,
   );
 
   static const TextStyle orangeBigText = TextStyle(
     fontFamily: 'Tajawal',
-    color: Color.fromRGBO(255, 240, 0, 100),
+    color: Color.fromRGBO(232, 176, 20, 50),
+    fontSize: 35,
+    fontWeight: FontWeight.w900,
+  );
+
+  static const TextStyle smallDescription = TextStyle(
+    fontFamily: 'Tajawal',
+    color: Color.fromRGBO(240, 240, 240, 75),
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle slightBoldWhiteText = TextStyle(
+    fontFamily: 'Tajawal',
+    color: Colors.white,
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle testColor = TextStyle(
+    fontFamily: 'Tajawal',
+    color: backgroundColor.computeLuminance() > 0.5? Colors.black : Colors.white,
     fontSize: 35,
     fontWeight: FontWeight.w900,
   );

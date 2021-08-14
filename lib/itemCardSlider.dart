@@ -47,7 +47,7 @@ class Item extends StatelessWidget{
           ),
           Align(
             alignment: const Alignment(-0.75, 0.95),
-            child: Text(movieDataMap[index]!.title, style: ThemeText.mainText,),
+            child: Text(movieDataMap[index]!.title, style: ThemeText.slightBoldWhiteText,),
           )
         ],
       ),

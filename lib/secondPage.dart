@@ -48,7 +48,7 @@ class SecondPage extends StatelessWidget{
                           Icon(Icons.arrow_back_ios_rounded, color: Colors.white,),
                           Padding(
                               padding: EdgeInsets.only(top: 5),
-                            child: Text('back', style: ThemeText.mainText,),
+                            child: Text('back', style: ThemeText.slightBoldWhiteText,),
                           ),
                         ],
                       ),
@@ -65,35 +65,33 @@ class SecondPage extends StatelessWidget{
                       ),
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(movieDataMap[index]!.genre, style: ThemeText.mainText,),
+                        child: Text(movieDataMap[index]!.genre, style: ThemeText.slightBoldWhiteText,),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 15, bottom: 15),
-                        child: Text(movieDataMap[index]!.description,
-                          style: ThemeText.mainText,
-                        ),
+                        child: Text(movieDataMap[index]!.description, style: ThemeText.smallDescription,),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 0),
+                        padding: EdgeInsets.only(top: 5),
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Wrap(
                             spacing: 72,
                             children: <Widget> [
-                              Text('RATING ', style: ThemeText.mainText,),
+                              Text('RATING ', style: ThemeText.slightBoldWhiteText,),
                               Text(movieDataMap[index]!.rating, style: ThemeText.orangeSmallText,),
                             ],
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 0),
+                        padding: EdgeInsets.symmetric(vertical: 5),
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Wrap(
                             spacing: 50,
                             children: <Widget> [
-                              Text('DIRECTOR ', style: ThemeText.mainText,),
+                              Text('DIRECTOR ', style: ThemeText.slightBoldWhiteText,),
                               Text(movieDataMap[index]!.director, style: ThemeText.orangeSmallText,),
                             ],
                           ),
@@ -106,7 +104,7 @@ class SecondPage extends StatelessWidget{
                           child: Wrap(
                             spacing: 90,
                             children: <Widget> [
-                              Text('CAST ', style: ThemeText.mainText,),
+                              Text('CAST ', style: ThemeText.slightBoldWhiteText,),
                               Text(movieDataMap[index]!.cast, style: ThemeText.orangeSmallText,),
                             ],
                           ),
@@ -122,7 +120,7 @@ class SecondPage extends StatelessWidget{
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {showToast(context);},
-        backgroundColor: Color.fromRGBO(255, 240, 0, 100),
+        backgroundColor: Color.fromRGBO(232, 176, 20, 50),
         elevation: 2,
         label: Text('BUY TICKETS', style: TextStyle(fontSize: 15),),
       ),

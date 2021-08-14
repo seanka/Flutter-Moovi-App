@@ -54,7 +54,7 @@ class FirstContainer extends StatelessWidget{
                   padding: EdgeInsets.only(top: 20, left: 20),
                   child: Text(
                     "Playing today",
-                    style: ThemeText.mainText,
+                    style: ThemeText.slightBoldWhiteText,
                   ),
                 )
             ),
@@ -64,9 +64,9 @@ class FirstContainer extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget> [
                   Text(movieDataMap[index]!.title, style: ThemeText.subText,),
-                  Text(movieDataMap[index]!.genre, style: ThemeText.mainText,),
+                  Text(movieDataMap[index]!.genre, style: ThemeText.slightBoldWhiteText,),
                   Padding(
-                    padding: const EdgeInsets.only(top: 15),
+                    padding: const EdgeInsets.only(top: 25),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (
@@ -83,7 +83,7 @@ class FirstContainer extends StatelessWidget{
                             )
                         ),
                       ),
-                      child: const Text('book now'),
+                      child: const Text('book now', style: ThemeText.mainText,),
                     ),
                   )
                 ],

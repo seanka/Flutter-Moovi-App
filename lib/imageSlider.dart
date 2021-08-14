@@ -72,8 +72,8 @@ class _ImageSliderState extends State<ImageSlider> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: _currentIndex == index
-                      ? const Color.fromRGBO(229, 129, 40, 1.0)
-                      : Colors.blue.withOpacity(0.3),
+                      ? const Color.fromRGBO(232, 176, 20, 50)
+                      : const Color.fromRGBO(232, 176, 20, 0.25),
                 ),
               );
             }),
