@@ -11,7 +11,7 @@ class Item extends StatelessWidget{
   const Item({Key? key, required this.index}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return InkResponse(
       onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: index,)));},
       child: Stack(
         children: <Widget> [
