@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:moovi/constant.dart';
-import 'showToast.dart';
+import 'package:moovi/thirdPage.dart';
 import 'movieData.dart';
 
 class SecondPage extends StatelessWidget{
@@ -47,7 +47,7 @@ class SecondPage extends StatelessWidget{
                         children: [
                           Icon(Icons.arrow_back_ios_rounded, color: Colors.white,),
                           Padding(
-                              padding: EdgeInsets.only(top: 5),
+                            padding: EdgeInsets.only(top: 5),
                             child: Text('back', style: ThemeText.slightBoldWhiteText,),
                           ),
                         ],
@@ -119,10 +119,10 @@ class SecondPage extends StatelessWidget{
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {showToast(context);},
-        backgroundColor: Color.fromRGBO(232, 176, 20, 50),
+        onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdPage(index: index,) ));},
+        backgroundColor: Color.fromRGBO(190, 145, 15, 1),
         elevation: 2,
-        label: Text('BUY TICKETS', style: TextStyle(fontSize: 15),),
+        label: Text('BUY TICKETS', style: ThemeText.FABtext),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
