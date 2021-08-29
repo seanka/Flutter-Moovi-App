@@ -1,5 +1,7 @@
 // ignore_for_file: file_names, unnecessary_new
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:moovi/FirstContainer.dart';
 import 'forthPage.dart';
@@ -124,24 +126,58 @@ class ThirdPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget> [
-                TextButton(
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateProperty.all(Colors.transparent),
-                    ),
-                    onPressed: () {Navigator.pop(context);},
-                    child: Row(
-                      children: const [
-                        Icon(Icons.arrow_back_ios_outlined, color: Colors.white,),
-                        Padding(
-                          padding: EdgeInsets.only(top: 5),
-                          child: Text('back', style: ThemeText.slightBoldWhiteText,),
-                        )
-                      ],
-                    )
-                ),
-                const SizedBox(height: 15,),
-                Text(movieDataMap[index]!.title, style: ThemeText.whiteBigTextOne,),
-                Text(date.format(now).toString(), style: ThemeText.orangeBigText,),
+                Stack(
+                    children: <Widget>[
+                      Container(
+                        height: 150,
+                      ),
+                      Positioned(
+                        right: 0,
+                        child: Container(
+                          width: 125,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(25),
+                            ),
+                            image: DecorationImage(image: AssetImage(movieDataMap[index]!.cover),
+                                fit: BoxFit.cover
+                            ),
+                          ),
+                          child: ClipRRect(
+                            child: BackdropFilter(
+                              filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
+                              child: Container(
+                                color: Colors.grey.withOpacity(0.1),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      TextButton(
+                          style: ButtonStyle(
+                            overlayColor: MaterialStateProperty.all(Colors.transparent),
+                          ),
+                          onPressed: () {Navigator.pop(context);},
+                          child: Row(
+                            children: const [
+                              Icon(Icons.arrow_back_ios_outlined, color: Colors.white,),
+                              Padding(
+                                padding: EdgeInsets.only(top: 5),
+                                child: Text('back', style: ThemeText.slightBoldWhiteText,),
+                              )
+                            ],
+                          )
+                      ),
+                      Positioned(
+                        bottom: 40,
+                        child: Text(movieDataMap[index]!.title, style: ThemeText.whiteBigTextOne,),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                      child: Text(date.format(now).toString(), style: ThemeText.orangeBigText,),
+                      ),
+                    ]),
                 const Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: Text('pick your seat', style: ThemeText.smallDescription,),
