@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:moovi/constant.dart';
 import 'package:moovi/thirdPage.dart';
 import 'movieData.dart';
+import 'backButton.dart';
 
 class SecondPage extends StatelessWidget{
   final movieDataMap = movieDataList.asMap();
@@ -38,21 +39,7 @@ class SecondPage extends StatelessWidget{
                           ),
                         )
                     ),
-                    TextButton(
-                      onPressed: () {Navigator.pop(context);},
-                      style: ButtonStyle(
-                          overlayColor: MaterialStateProperty.all(Colors.transparent)
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(Icons.arrow_back_ios_rounded, color: Colors.white,),
-                          Padding(
-                            padding: EdgeInsets.only(top: 5),
-                            child: Text('back', style: ThemeText.slightBoldWhiteText,),
-                          ),
-                        ],
-                      ),
-                    ),
+                    SmallBackButton(),
                   ],
                 ),
                 Padding(

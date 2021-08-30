@@ -7,6 +7,7 @@ import 'package:moovi/FirstContainer.dart';
 import 'forthPage.dart';
 import 'package:intl/intl.dart';
 import 'constant.dart';
+import 'backButton.dart';
 List<String> isOn = [];
 
 class SeatButton extends StatefulWidget {
@@ -109,21 +110,7 @@ class ThirdPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      TextButton(
-                          style: ButtonStyle(
-                            overlayColor: MaterialStateProperty.all(Colors.transparent),
-                          ),
-                          onPressed: () {Navigator.pop(context);},
-                          child: Row(
-                            children: const [
-                              Icon(Icons.arrow_back_ios_outlined, color: Colors.white,),
-                              Padding(
-                                padding: EdgeInsets.only(top: 5),
-                                child: Text('back', style: ThemeText.slightBoldWhiteText,),
-                              )
-                            ],
-                          )
-                      ),
+                      SmallBackButton(),
                       Positioned(
                         bottom: 40,
                         left: 5,
