@@ -7,7 +7,7 @@ import 'package:moovi/FirstContainer.dart';
 import 'forthPage.dart';
 import 'package:intl/intl.dart';
 import 'constant.dart';
-var isOn = [];
+List<String> isOn = [];
 
 class SeatButton extends StatefulWidget {
   final String position;
@@ -77,7 +77,7 @@ class ThirdPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25, top: 5, bottom: 50),
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget> [
@@ -126,19 +126,21 @@ class ThirdPage extends StatelessWidget {
                       ),
                       Positioned(
                         bottom: 40,
+                        left: 5,
                         child: Text(movieDataMap[index]!.title, style: ThemeText.whiteBigTextOne,),
                       ),
                       Positioned(
                         bottom: 0,
-                      child: Text(date.format(now).toString(), style: ThemeText.orangeBigText,),
+                        left: 5,
+                        child: Text(date.format(now).toString(), style: ThemeText.orangeBigText,),
                       ),
                     ]),
                 const Padding(
-                  padding: EdgeInsets.only(top: 20),
+                  padding: EdgeInsets.only(top: 20, left: 5, right: 5),
                   child: Text('pick your seat', style: ThemeText.smallDescription,),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 10, left: 5, right: 5),
                   child: Image.asset('assets/images/screen.png'),
                 ),
                 Row(
@@ -179,7 +181,7 @@ class ThirdPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ForthPage()));},
+        onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ForthPage(isOn: isOn)));},
         backgroundColor: const Color.fromRGBO(190, 145, 15, 1),
         elevation: 2,
         label: const Text('CHECKOUT', style: ThemeText.FABtext),
