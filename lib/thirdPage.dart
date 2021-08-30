@@ -63,51 +63,6 @@ class _SeatButtonState extends State<SeatButton> {
   }
 }
 
-// class DateButton extends StatefulWidget {
-//   @override
-//   _DateButtonState createState() => _DateButtonState();
-// }
-
-// class _DateButtonState extends State<DateButton> {
-//   late List<bool> isSelected = [false, false, false];
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: <Widget> [
-//         ToggleButtons(
-//           children: <Widget>[
-//             Container(
-//               decoration: BoxDecoration(
-//                 borderRadius: BorderRadius.circular(50),
-//                 border: Border.all(color: Colors.black)
-//               ),
-//               child: Padding(
-//                 padding: EdgeInsets.all(15),
-//                 child: Text("MON\nJAN 15"),
-//               ),
-//             ),
-//             Text("1"),
-//             Text("1"),
-//           ],
-//           renderBorder: false,
-//           isSelected: isSelected,
-//           onPressed: (int index) {
-//             setState(() {
-//               for (int buttonIndex = 0; buttonIndex < isSelected.length; buttonIndex++) {
-//                 if(buttonIndex == index){
-//                   isSelected[buttonIndex] = true;
-//                 } else {
-//                   isSelected[buttonIndex] = false;
-//                 }
-//               }
-//             });
-//           },
-//         ),
-//       ],
-//     );
-//   }
-// }
-
 class ThirdPage extends StatelessWidget {
   final int index;
 
