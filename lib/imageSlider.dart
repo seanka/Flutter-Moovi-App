@@ -51,11 +51,9 @@ class _ImageSliderState extends State<ImageSlider> {
                 }
             ),
             items: cardList.map((item) {
-              // return ItemCard(title: item.toString());
               return Builder(
                 builder: (BuildContext context) {
                   return SizedBox(
-                    // width: MediaQuery.of(context).size.width * 0.5,
                     child: item,
                   );
                 },

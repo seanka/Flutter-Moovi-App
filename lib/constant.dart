@@ -66,4 +66,18 @@ class ThemeText{
     fontSize: 15,
     fontWeight: FontWeight.w900,
   );
+
+  static const TextStyle orderPage = TextStyle(
+    fontFamily: 'Tajawal',
+    color: Colors.white,
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const TextStyle orangeOrderPage = TextStyle(
+    fontFamily: 'Tajawal',
+    color: Color.fromRGBO(232, 176, 20, 1),
+    fontSize: 25,
+    fontWeight: FontWeight.w700,
+  );
 }

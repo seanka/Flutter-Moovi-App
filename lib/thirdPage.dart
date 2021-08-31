@@ -168,7 +168,7 @@ class ThirdPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ForthPage(isOn: isOn)));},
+        onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ForthPage(isOn: isOn, index: index,)));},
         backgroundColor: const Color.fromRGBO(190, 145, 15, 1),
         elevation: 2,
         label: const Text('CHECKOUT', style: ThemeText.FABtext),
